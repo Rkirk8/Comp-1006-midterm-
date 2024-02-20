@@ -28,10 +28,21 @@
         echo "<h2>Selected Workout</h2>";
         echo "<ul>";
         foreach ($exercises as $exercise) {
-            echo "<li>$exercise[0]</li>";
+            echo "<li><a href='delete-exercise.php?name=$exercise[0]'>$exercise[0]</a></li>";
         }
+        // JS delete option for each exercise
+        echo "<script>
+            document.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', event => {
+                    if (!confirm('Are you sure you want to delete this exercise?')) {
+                        event.preventDefault();
+                    }
+                })
+            })
+        </script>";
         echo "</ul>";
         // disconnect
         $db = null;
         ?>
+
     </body>
