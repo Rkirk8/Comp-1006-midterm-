@@ -9,7 +9,7 @@
 <body>
     <h1>Choose a workout</h1>
     <!-- form -->
-    <form method="post" action="workout.php" >
+    <form method="post" action="exercises.php" >
         <!-- dynamic dropdowns populated from mysql-->
         <!-- Upper Body-->
         <fieldset class="Upper-Body">
